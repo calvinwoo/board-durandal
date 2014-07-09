@@ -12,6 +12,7 @@ requirejs.config({
 define(function (require) {
   var system = require('durandal/system');
   var app = require('durandal/app');
+  var viewLocator = require('durandal/viewLocator');
 
   system.debug(true);
  
@@ -23,7 +24,8 @@ define(function (require) {
   });
 
   app.start().then(function() {
-    app.setRoot('shell');
+    viewLocator.useConvention();
+    app.setRoot('viewmodels/shell');
   });
 });
  
