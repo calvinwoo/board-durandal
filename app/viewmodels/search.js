@@ -6,11 +6,13 @@ define(function (require) {
 
   return {
     query: ko.observable(),
-    results: ko.observableArray(),
+    results: ko.observableArray([]),
     runSearch: function() {
+      var that = this;
       var queryUrl = url + '?q=' + this.query();
       http.get(queryUrl).then(function(data) {
-        console.log(data.data.children)
+        that.results(data.data.children);
+        console.log(that.results())
       });
     }
   };

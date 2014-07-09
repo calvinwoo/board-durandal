@@ -1,3 +1,12 @@
-<div>
-  <input type="text" data-bind="value: query, valueUpdate: 'afterkeydown', event: {'keyup': runSearch}" />
+<div class="search-container">
+  <h2>Search</h2>
+  <div class="search-div">
+    <input type="text" class="form-control" data-bind="value: query, valueUpdate: 'afterkeydown', event: {'keyup': runSearch}" />
+  </div>
+
+  <h2>Results</h2>
+  <div data-bind="foreach: results">
+    <div data-bind="text: data.title"></div>
+  </div>
+
 </div>
