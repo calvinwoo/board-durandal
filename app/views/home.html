@@ -3,6 +3,7 @@
   <form class="form-inline">
     <fieldset>
       <label>Name</label>
+      <p data-bind="text: name"></p>
       <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'"/>
       <button type="submit" class="btn" data-bind="click: sayHello, enable: name">Click Me</button>
     </fieldset>
